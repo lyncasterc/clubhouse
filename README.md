@@ -1,24 +1,9 @@
-# README
+# Clubhouse
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project was completed as part of [The Odin Project's](https://www.theodinproject.com/paths/full-stack-ruby-on-rails/courses/ruby-on-rails/lessons/authentication) cirriculum.
 
-Things you may want to cover:
+This is a small web project designed to test us on data models and user authentication. 
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The concept is a private messageboard for some kind of private clubhouse. 
+Authorized users can make posts, comment on posts and are able to see the authors of the post.
+Users who are not signed up are able to see the posts but not the authors.
