@@ -23,9 +23,8 @@
         <p class="alert"> <%= alert %> </p>
       </div>
     <% end %>
-    <%= yield %>
 
-    <nav class="navbar is-light">
+    <nav class="navbar is-white">
 
       <div class="navbar-brand">
         <%= link_to root_path, class: "navbar-item" do %>
@@ -48,5 +47,6 @@
 
     </nav>
 
+    <%= yield %>
   </body>
 </html>
