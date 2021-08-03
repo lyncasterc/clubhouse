@@ -1,20 +1,21 @@
 class PostsController < ApplicationController
-  # skip_before_action :authenticate_user!, only: [:index, :show]
-
+  before_action :set_post, only: %i[ show edit update destroy ]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @posts = Post.all.order(created_at: :desc)
+    @post = Post.new
   end
 
   def show
   end
 
   def new
-    @post = Post.new
+    @post = current_user.posts.build(post_params)
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = current_user.posts.build(post_params)
 
     respond_to do |format|
       if @post.save
@@ -28,6 +29,10 @@ class PostsController < ApplicationController
   end
 
   private
+
+  def set_post
+    @post = Post.find(params[:id])
+  end
   
   def post_params
     params.require(:post).permit(:title, :body)

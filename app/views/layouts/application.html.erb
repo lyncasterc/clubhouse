@@ -25,7 +25,6 @@
     <% end %>
 
     <nav class="navbar is-white">
-
       <div class="navbar-brand">
         <%= link_to root_path, class: "navbar-item" do %>
           <h1 class="title is-size-4"> <span class="icon mr-1"><i class="fas fa-ship"></i></span> Clubhouse </h1>
@@ -42,7 +41,11 @@
       </div>
 
     <div id="main-nav" class="navbar-menu">
-      
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <%= link_to "Sign Up", new_user_registration_path, class: "button is-info" %>
+        </div>
+      </div>
     </div>
 
     </nav>
