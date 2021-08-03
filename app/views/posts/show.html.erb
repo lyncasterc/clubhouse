@@ -35,8 +35,23 @@
                 </div>
                 <div class="box">
                     <p style="white-space: pre-line;" > <%= @post.body %> </p>
+                </div> 
+
+                
+                <div class="box" style="max-width: 700px;">
+
+                    <div class="content comments-container">
+                        <h2 class="title"> Comments </h2>
+                        <%= render @post.comments %>
+                    </div>
+                    
+                    <h3 class="title is-5"> New Comment </h3>
+                    <%= render 'comments/form' %>
+                    
                 </div>
             </div>
+
+            
         </div>
     </div>
 </section>

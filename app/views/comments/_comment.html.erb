@@ -1,0 +1,46 @@
+<div class="comment">
+    <p style="white-space: pre-line; font-size: 1.1rem" class=""> <%= comment.body %> </p>
+    
+    <div class="level is-mobile mt-0" >
+        <div class="level-left" >
+            <div class="level-item has-text-centered ">
+            
+                <div class="level-item">
+                    <small>
+                        <strong>
+                            <% if user_signed_in? %>
+                                <%= comment.user.name %>
+                            <% else %>
+                                Anonymous
+                            <% end %>
+                        </strong>
+                        <%= time_ago_in_words(comment.created_at) %>
+                        ago
+                    </small>
+                </div>
+            </div>
+
+            <% if comment.created_at != comment.updated_at%>
+                <div class="level-item">
+                    <small>
+                        edited
+                        <%= time_ago_in_words(comment.updated_at) %>
+                        ago
+                    </small>
+                </div>
+            <% end %>
+
+            <% if comment.user == current_user %>
+                <%= link_to edit_post_comment_path(@post, comment), class: "level-item mr-0" do %>
+                    <span class="icon"><i class="fas fa-edit is-size-5"></i></span>
+                <% end %>
+
+                
+            <% end %>
+        </div>
+    </div>
+</div>
+
+
+
+

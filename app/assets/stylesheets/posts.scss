@@ -7,6 +7,11 @@
     border-bottom: 1px solid lightgrey;
 }
 
+.comments-container .comment:not(:last-child){
+    border-bottom: 1px solid lightgrey;
+    margin-bottom: 10px;
+}
+
 .panel .panel-block{
     background-color: white;
 }
