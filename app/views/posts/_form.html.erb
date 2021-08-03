@@ -1,0 +1,24 @@
+<%= simple_form_for @post do |f| %>
+    <%= f.error_notification %>
+
+    <div class="field">
+        <div class="control">
+            <%= f.input :title, wrapper: false, required: true, input_html: { autocomplete: true, class: "input" }, 
+                                                                            label_html: { class: "label" }%>
+        </div>
+    </div>
+
+    <div class="field">
+        <div class="control">
+            <%= f.input :body, wrapper: false, required: true, input_html: {class: "textarea" }, 
+                                                                            label_html: { class: "label" }%>
+        </div>
+    </div>
+
+    <div class="field">
+        <div class="control">
+            <%= f.button :submit, "Submit", class: "button is-info" %>
+        </div>
+    </div>
+    
+<% end %>
