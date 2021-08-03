@@ -1,0 +1,42 @@
+<section class="section">
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-9">
+
+                <h1 class="title is-3 "> <%= link_to @post.title, @post %> </h1>
+
+                <div class="level is-mobile" >
+                    <div class="level-left" >
+                        <div class="level-item has-text-centered ">
+                            <small > submitted by <strong> <%= @post.user.name %> </strong> <%= time_ago_in_words(@post.created_at) %> ago </small>
+                        </div>
+
+                        <% if @post.created_at != @post.updated_at%>
+                            <div class="level-item">
+                                <small>
+                                    edited
+                                    <%= time_ago_in_words(@post.updated_at) %>
+                                    ago
+                                </small>
+                            </div>
+                        <% end %>
+
+                        <% if @post.user == current_user %>
+                            <%= link_to edit_post_path(@post), class: "level-item mr-0" do %>
+                                <span class="icon"><i class="fas fa-edit is-size-5"></i></span>
+                            <% end %>
+
+                            <%= link_to @post, method: :delete, data: { confirm: "Are you sure you want to delete this post?" }, class:"level-item" do %>
+                                <span class="icon"> <i class="fas fa-trash-alt is-size-5"></i></span>
+                            <% end %>
+                        <% end %>
+
+                    </div>
+                </div>
+                <div class="box">
+                    <p> <%= simple_format(@post.body) %> </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
