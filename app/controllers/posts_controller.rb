@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  # skip_before_action :authenticate_user!, only: [:index, :show]
 
 
   def index
@@ -10,11 +10,11 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = current_user.posts.build
+    @post = Post.new
   end
 
   def create
-    @post = current_user.posts.build(post_params)
+    @post = Post.new(post_params)
 
     respond_to do |format|
       if @post.save
