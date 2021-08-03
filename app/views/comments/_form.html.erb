@@ -1,0 +1,15 @@
+<%= simple_form_for [@post, @post.comments.build] do |f| %>
+<div class="field">
+    <div class="control">
+        <%= f.input :body, input_html: { class: "textarea" }, wrapper: false, label: false, autofocus: true %>
+    </div>
+</div>
+
+<div class="field">
+    <div class="control">
+        <%= f.button :submit, 'Comment', class: "button is-info " %>
+    </div>
+</div>
+<% end %>
+
+
