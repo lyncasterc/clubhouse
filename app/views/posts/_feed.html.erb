@@ -44,6 +44,7 @@
                     </small>
                     
                 <% end %>
+                
                 <% if post.user == current_user %>
                     <br>
                     <%= link_to edit_post_path(post), class: " mr-0" do %>
@@ -53,8 +54,6 @@
                     <%= link_to post, method: :delete, data: { confirm: "Are you sure you want to delete this post?" }, class:"" do %>
                         <span class="icon"> <i class="fas fa-trash-alt is-size-5"></i></span>
                     <% end %>
-                    
-                
                 <% end %>
 
             
