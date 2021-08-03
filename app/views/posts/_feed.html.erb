@@ -1,26 +1,28 @@
 <div class="column is-9">
     <div class="box post-container">
 
-        <%# post template %>
-        <div class="content p-2 post" >
-            <h1 class="title is-5">
-                <a href="">Post Title Placeholder</a>
-            </h1>
-            <div class="level is-mobile">
-                <div class="level-left">
-                    <div class="level-item">
-                        <small >submitted by <strong>John Doe</strong> n minutes ago </small>
+        <% posts.each do |post| %>
+        
+            <div class="content p-2 post" >
+                <h1 class="title is-5">
+                    <%= link_to post.title, post %>
+                </h1>
+                <div class="level is-mobile">
+                    <div class="level-left">
+                        <div class="level-item">
+                            <small> submitted by <strong> <%= post.user.name %> </strong> <%= time_ago_in_words(post.created_at) %>  ago </small>
+                        </div>
+                    </div>
+                    <div class="level-right">
+                        <span class="level-item icon mr-1">
+                            <i class="far fa-comments has-text-grey "></i>
+                        </span>
+                        <p class="has-text-grey">0</p>
                     </div>
                 </div>
-
-                <div class="level-right">
-                    <span class="level-item icon mr-1">
-                        <i class="far fa-comments has-text-grey "></i>
-                    </span>
-                    <p class="has-text-grey">0</p>
-                </div>
             </div>
-        </div>
 
+        <% end %>
+    
     </div>
 </div>
