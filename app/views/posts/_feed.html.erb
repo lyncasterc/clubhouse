@@ -1,4 +1,8 @@
 <div class="column is-9">
+
+    <% if controller.action_name == 'hashtags' %>
+        <h1 class="title is-4 has-text-link"> #<%= params[:name] %> </h1>
+    <% end %>
     <div class="box post-container">
 
         <% posts.each do |post| %>

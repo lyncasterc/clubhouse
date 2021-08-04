@@ -2,21 +2,13 @@
     <%= link_to "Create Post", new_post_path, class:"button is-info is-rounded mb-5 is-medium" %>
     <div class="panel">
         <p class="panel-heading"> Tags </p>
-        
-        <%# tag template %>
-        <a class="panel-block is-hoverable">
-            <span class="tag is-link is-light is-medium"> Boats </span>
-        </a>
-        <a class="panel-block is-hoverable">
-            <span class="tag is-link is-light is-medium"> Boats </span>
-        </a>
-        <a class="panel-block is-hoverable">
-            <span class="tag is-link is-light is-medium"> Boats </span>
-        </a>
-        <a class="panel-block is-hoverable">
-            <span class="tag is-link is-light is-medium"> Boats </span>
-        </a>
-        
-    </div>
 
+        <% trending_hashtags.each do |tag_name| %>
+            <%= link_to "/posts/hashtag/#{tag_name}", class: "panel-block" do %>
+                <span class="tag is-link is-light is-medium"> <%= tag_name %> </span>
+            <% end %>
+        <% end %>
+    
+    </div>
+    
 </div>
