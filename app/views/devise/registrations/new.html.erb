@@ -12,7 +12,7 @@
               <div class="control">
                 <%= f.input :name,
                         required: true,
-                        autofocus: true,
+                        autofocus: false,
                         input_html: { autocomplete: "name" },
                         input_html: { autocomplete: "new-password", class: "input" }, wrapper: false, label_html: { class: "label" }%>
               </div>
@@ -22,7 +22,7 @@
               <div class="control">
                 <%= f.input :email,
                         required: true,
-                        autofocus: true,
+                        autofocus: false,
                         input_html: { autocomplete: "email" },
                         input_html: { autocomplete: "new-password", class: "input" }, wrapper: false, label_html: { class: "label" }%>
               </div>
