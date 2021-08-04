@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show, :hashtags]
 
   def index
     @posts = Post.all.order(created_at: :desc)
@@ -8,6 +8,11 @@ class PostsController < ApplicationController
   end
 
   def show
+  end
+
+  def hashtags
+    tag = Tag.find_by(name: params[:name])
+    @posts = tag.posts
   end
 
   def new
