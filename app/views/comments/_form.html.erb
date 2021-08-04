@@ -1,15 +1,32 @@
-<%= simple_form_for [@post, @post.comments.build] do |f| %>
-<div class="field">
-    <div class="control">
-        <%= f.input :body, input_html: { class: "textarea" }, wrapper: false, label: false, autofocus: true %>
-    </div>
-</div>
+<% if controller.action_name == 'edit' %>
+    <%= simple_form_for [@post, @comment] do |f| %>
+        <%= f.error_notification %>
+        <div class="field">
+            <div class="control">
+                <%= f.input :body, input_html: { class: "textarea" }, wrapper: false, label: false %>
+            </div>
+        </div>
 
-<div class="field">
-    <div class="control">
-        <%= f.button :submit, 'Comment', class: "button is-info " %>
-    </div>
-</div>
+        <div class="field">
+            <div class="control">
+                <%= f.button :submit, 'Comment', class: "button is-info " %>
+            </div>
+        </div>
+    <% end %>  
+<% else %> 
+    <%= simple_form_for [@post, @post.comments.build] do |f| %>
+        <%= f.error_notification %>
+        <div class="field">
+            <div class="control">
+                <%= f.input :body, input_html: { class: "textarea" }, wrapper: false, label: false %>
+            </div>
+        </div>
+
+        <div class="field">
+            <div class="control">
+                <%= f.button :submit, 'Comment', class: "button is-info " %>
+            </div>
+        </div>
+    <% end %>
 <% end %>
-
 
