@@ -7,3 +7,7 @@ This is a small web project designed to test us on data models and user authenti
 The concept is a private messageboard for some kind of private clubhouse. 
 Authorized users can make posts, comment on posts and are able to see the authors of the post.
 Users who are not signed up are able to see the posts but not the authors.
+
+I've also implemented a simple commenting system, as well as a hashtag system for the posts.
+
+Check it out [live](https://github.com/lyncasterc/clubhouse)!
