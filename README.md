@@ -10,4 +10,4 @@ Users who are not signed up are able to see the posts but not the authors.
 
 I've also implemented a simple commenting system, as well as a hashtag system for the posts.
 
-Check it out [live](https://github.com/lyncasterc/clubhouse)!
+Check it out [live](https://clubhouse-sc.herokuapp.com/)!
