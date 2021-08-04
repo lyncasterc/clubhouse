@@ -15,7 +15,7 @@ class CommentsController < ApplicationController
         format.html { redirect_to @post, notice: 'Comment created!' }
         format.json { render :show, status: :created, location: @comment }
       else
-        format.html { render :new }
+        format.html { redirect_to @post, alert: 'Comment body can not be empty!' }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end
@@ -23,10 +23,11 @@ class CommentsController < ApplicationController
 
   def update
     @comment = Comment.find(params[:id])
+    @post = @comment.post
 
     respond_to do |format|
       if @comment.update(comment_params)
-        format.html { redirect_to @comment, notice: "Comment updated!" }
+        format.html { redirect_to @post, notice: "Comment updated!" }
         format.json { render :show, status: :ok, location: @comment }
       else
         format.html { render :edit, status: :unprocessable_entity }
