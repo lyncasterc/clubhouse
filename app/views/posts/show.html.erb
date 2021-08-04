@@ -8,7 +8,18 @@
                 <div class="level is-mobile" >
                     <div class="level-left" >
                         <div class="level-item has-text-centered ">
-                            <small > submitted by <strong> <%= @post.user.name %> </strong> <%= time_ago_in_words(@post.created_at) %> ago </small>
+                            <small>
+                                submitted by
+                                <strong>
+                                    <% if user_signed_in? %>
+                                        <%= @post.user.name %>
+                                    <% else %>
+                                        Anonymous
+                                    <% end %>
+                                </strong>
+                                <%= time_ago_in_words(@post.created_at) %>
+                                ago
+                            </small>
                         </div>
 
                         <% if @post.created_at != @post.updated_at%>
