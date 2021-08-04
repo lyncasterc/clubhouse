@@ -12,7 +12,7 @@
                 <%= f.button :submit, 'Comment', class: "button is-info " %>
             </div>
         </div>
-        <%= link_to 'Go back', @post, class: "button is-dark"%>
+        <%= link_to 'Go back', @post, class: "button"%>
     <% end %>  
 <% else %> 
     <%= simple_form_for [@post, @post.comments.build] do |f| %>
