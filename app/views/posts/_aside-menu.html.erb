@@ -1,7 +1,7 @@
 <div class="column is-3">
     <%= link_to "Create Post", new_post_path, class:"button is-info is-rounded mb-5 is-medium" %>
     <div class="panel">
-        <p class="panel-heading"> Tags </p>
+        <p class="panel-heading"> Trending </p>
 
         <% trending_hashtags.each do |tag_name| %>
             <%= link_to "/posts/hashtag/#{tag_name}", class: "panel-block" do %>
