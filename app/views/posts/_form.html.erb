@@ -20,5 +20,10 @@
             <%= f.button :submit, "Submit", class: "button is-info" %>
         </div>
     </div>
-    
+
+    <% if controller.action_name == 'edit' %>
+        <%= link_to 'Go Back', @post, class: "button is-dark" %>
+    <% else %>
+        <%= link_to 'Go Back', root_path, class: "button is-dark" %>
+    <% end %>
 <% end %>
